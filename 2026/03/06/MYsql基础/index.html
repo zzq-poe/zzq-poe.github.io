@@ -14,7 +14,7 @@
 <meta property="og:description" content="一些MySQL浅层知识启动MySQLpowershell能力强大，它可进行很多指令。powershell中的一些语言词句也已经忘记，等后来想起再做记录。 想要使用mysql，需要启mysql服务器。启动服务器需要的操作：net start mysql80还可能是其他版本，就将mysql80改成别的。一般时候我们可以将MySQL部署在环境变量中，这样就不用每次开机都启动服务器了想要使用MySQL，就">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-03-06T12:46:11.000Z">
-<meta property="article:modified_time" content="2026-03-07T10:48:36.998Z">
+<meta property="article:modified_time" content="2026-03-07T16:36:48.132Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -100,7 +100,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="一些MySQL浅层知识"><a href="#一些MySQL浅层知识" class="headerlink" title="一些MySQL浅层知识"></a><strong>一些MySQL浅层知识</strong></h1><h2 id="启动MySQL"><a href="#启动MySQL" class="headerlink" title="启动MySQL"></a><strong>启动MySQL</strong></h2><p>powershell能力强大，它可进行很多指令。<br>powershell中的一些语言词句也已经忘记，等后来想起再做记录。</p>
-<p>想要使用mysql，需要启mysql服务器。<br>启动服务器需要的操作：net start mysql80<br>还可能是其他版本，就将mysql80改成别的。<br>一般时候我们可以将MySQL部署在环境变量中，这样就不用每次开机都启动服务器了<br>想要使用MySQL，就是启动mysql客户端。<br>在powershell中输入：“mysql -u root -p”然后出现：“Enter password:”<br>随后输入下载时设置好的密码，就打开成功了。<br>其中，-u root 是指 指定登录用户名为 root。这个是在下载时默认的。<br>      -p 表示需要密码<br>这个时候powershell中输入行前就会变为 mysql&gt;<br>就表示成功进入了MySQL服务器，可以输入指令使用mysql了</p>
+<p>想要使用mysql，需要启mysql服务器。<br>启动服务器需要的操作：net start mysql80<br>还可能是其他版本，就将mysql80改成别的。<br>一般时候我们可以将MySQL部署在环境变量中，这样就不用每次开机都启动服务器了<br>想要使用MySQL，就要启动mysql客户端。<br>在powershell中输入：“mysql -u root -p”然后出现：“Enter password:”<br>随后输入下载时设置好的密码，就打开成功了。<br>其中，-u root 是指 指定登录用户名为 root。这个是在下载时默认的。<br>      -p 表示需要密码<br>这个时候powershell中输入行前就会变为 mysql&gt;<br>就表示成功进入了MySQL服务器，可以输入指令使用mysql了</p>
 <h2 id="MySQL中一些语法以及语言"><a href="#MySQL中一些语法以及语言" class="headerlink" title="MySQL中一些语法以及语言"></a><strong>MySQL中一些语法以及语言</strong></h2><h3 id="两个重要概念"><a href="#两个重要概念" class="headerlink" title="两个重要概念"></a><em>两个重要概念</em></h3><p>1.在使用MySQL即和MySQL对话的时候，在语句末尾需要加上分号“;”才可以回车运行。</p>
 <p>2.MySQL关键字不区分大小写，也就是一个词语可以大小写混杂地写，但是没有必要。<br>  不过在书写时，一般习惯将命令、关键字等写为大写的形式。<br>  如CREATE和cReATe是完全一样的两条命令。</p>
 <p>  不过变量的名称是严格区分大小写的，大小写不同表示的不同的事务。<br>  prose和Prose是两个不同的东西</p>
@@ -124,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/06/MYsql%E5%9F%BA%E7%A1%80/" data-id="cmmg72x0i0001mguganue6od7" data-title="MySQL基础" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/06/MYsql%E5%9F%BA%E7%A1%80/" data-id="cmmgjqiut00026ouggi2uaun3" data-title="MySQL基础" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -163,7 +163,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">-笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E5%86%99/">-随写</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">-笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">-随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
     </div>
   </div>
 
