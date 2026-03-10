@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>MySQL基础2 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MySQL的增删改查 上一篇以一个例子对MySQL语言开始大致熟悉，现展开详细地系统地学习 主要以AI给出的例子为基础进行对关键字及其用法的理解 增INSERT INTO 表名(列名，列名，列名)(xxx,xxx,xxx) —————— 基础格式为此，重要词汇 INSERT INTO也可不指定列名，但增加时要按顺序提及所有列，自增则填NULL也可插入其他表中数据 12INSERT INTO stu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL基础2">
+<meta property="og:url" content="http://example.com/2026/03/10/MySQL%E5%9F%BA%E7%A1%80-0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MySQL的增删改查 上一篇以一个例子对MySQL语言开始大致熟悉，现展开详细地系统地学习 主要以AI给出的例子为基础进行对关键字及其用法的理解 增INSERT INTO 表名(列名，列名，列名)(xxx,xxx,xxx) —————— 基础格式为此，重要词汇 INSERT INTO也可不指定列名，但增加时要按顺序提及所有列，自增则填NULL也可插入其他表中数据 12INSERT INTO stu">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-10T02:02:25.000Z">
+<meta property="article:modified_time" content="2026-03-10T17:06:01.840Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-MySQL基础-0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/10/MySQL%E5%9F%BA%E7%A1%80-0/" class="article-date">
+  <time class="dt-published" datetime="2026-03-10T02:02:25.000Z" itemprop="datePublished">2026-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">-笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      MySQL基础2
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="MySQL的增删改查"><a href="#MySQL的增删改查" class="headerlink" title="MySQL的增删改查"></a><strong>MySQL的增删改查</strong></h1><p> 上一篇以一个例子对MySQL语言开始大致熟悉，现展开详细地系统地学习<br> 主要以AI给出的例子为基础进行对关键字及其用法的理解</p>
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a><strong>增</strong></h2><p>INSERT INTO 表名(列名，列名，列名)<br>(xxx,xxx,xxx) —————— <em>基础格式为此，重要词汇 INSERT INTO</em><br><em>也可不指定列名，但增加时要按顺序提及所有列，自增则填NULL</em><br><em>也可插入其他表中数据</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (name, age, class)</span><br><span class="line">SELECT name, age, class FROM other_students WHERE age &gt; 18;</span><br></pre></td></tr></table></figure>
+<p><em>表示为将查询结果插入列表中</em><br><strong>只插入部分列时（相对总表），其他列为空或默认值</strong></p>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a><strong>查</strong></h2><p><em>基本语法</em><br><code>SELECT 列名 FROM 表名 WHERE 条件;</code></p>
+<h3 id="WHERE-条件查询："><a href="#WHERE-条件查询：" class="headerlink" title="WHERE 条件查询："></a><strong>WHERE 条件查询：</strong></h3><p><code>&lt;&gt;</code>  — <em>也是不等于，同</em><code>!=</code><br>—— <em>多个条件时</em> ——-<br><code>OR</code> <em>和</em> <code>AND </code><em>进行连接（两者意思不同）</em><br><code>AND</code><em>表同时成立</em><br><code>IN</code><em>判断字段的值是否等于列表中的任意一个值，相当于多个</em><code>OR</code><em>条件</em><br><em>一般写为</em> <code>WHERE 列名 IN (值,值,值)</code><br>———– <code> WHERE class IN (&#39;一班&#39;, &#39;二班&#39;, &#39;三班&#39;)</code><br><code>LIKE</code> ——- <em>模糊查询</em><br><em>示例</em> —- <code>SELECT * FROM employees WHERE name LIKE &#39;张%&#39;;</code><br><em>查询以 “xx” 开头的</em> <code>LIKE &#39;xx%&#39;</code><br><em>查询包含 “xx” 的</em>  <code>LIKE &#39;%xx%&#39;</code><br><em>查询以 “xx” 结尾的</em> <code>LIKE &#39;%xx&#39;</code><br><em>其他查询示例演示</em><br><em>查询名字长度为 3 且第二个字是 “小” 的员工</em><br><code>SELECT * FROM employees WHERE name LIKE &#39;_小_&#39;;</code><br><em>查询名字以 “李” 开头且至少有两个字的员工</em><br><code>SELECT * FROM employees WHERE name LIKE &#39;李%&#39; AND LENGTH(name) &gt;= 2;</code><br><em>查询特殊符号时需要转义字符”&quot;,在转义字符后加需要查询的</em><br>—– <em>自定义转义字符</em> —–<br><em>使用 ‘&#x2F;‘ 作为转义字符，查询包含 “%” 的字符串</em><br><code>SELECT * FROM products WHERE description LIKE &#39;%/%%&#39; ESCAPE &#39;/&#39;;</code></p>
+<h3 id="排序、限制结果数量、去重"><a href="#排序、限制结果数量、去重" class="headerlink" title="排序、限制结果数量、去重"></a><strong>排序、限制结果数量、去重</strong></h3><p> 排序 - <code>ORDER BY</code><br> 限制结果数量 - <code>LIMIT</code><br> 去重 - <code>DISTINCT</code><br>——— <strong>排序</strong> ———<br>— <em>升序排列</em><br><code>SELECT * FROM students ORDER BY age;</code> — <em>升序是默认</em><br><code>SELECT * FROM students ORDER BY age ASC;</code><br>— <em>降序排列</em><br><code>SELECT * FROM students ORDER BY age DESC;</code><br>— <em>多列排序</em><br><code>SELECT * FROM students ORDER BY class, age DESC;</code><br><em>—–先按班级升序，再按年龄降序</em><br>——— <strong>限制结果数量</strong> ———<br>— <em>查询前3条</em><br><code>SELECT * FROM students LIMIT 3;</code><br>— <em>跳过前2条，查询3条</em><br><code>SELECT * FROM students LIMIT 2, 3;</code><br><code>SELECT * FROM students LIMIT 3 OFFSET 2;</code> — <em>从第3条开始，查询3条</em><br>——— <strong>去重</strong> ———<br>— <em>查询所有不重复的班级</em><br><code>SELECT DISTINCT class FROM students;</code></p>
+<h3 id="聚合函数、分组查询"><a href="#聚合函数、分组查询" class="headerlink" title="聚合函数、分组查询"></a><strong>聚合函数、分组查询</strong></h3><p>——— <strong>聚合函数</strong> ———<br><code>AVG()</code> ———– <em>AVG() 是聚合函数，计算该组的平均值</em><br><code>COUNT()</code> ——— <em>计算行数或是非空的个数</em><br><code>SUM()</code> ———– <em>计算数值列的总和</em><br><code>MAX()</code> ———– <em>计算数值列的总和</em><br><code>MIN()</code> ———– <em>返回最小值</em><br><code>SELECT 函数 FROM 数据库;</code><br><code>SELECT 函数 (AS 别名) FROM 数据库 (WHERE...);</code><br>——— <em>例</em> ———<br><code>SELECT COUNT(*) FROM students;</code> —- <em>总记录数 *表总</em><br><code>SELECT COUNT(*) FROM students WHERE class = &#39;一班&#39;; </code><br><code>SELECT AVG(age) AS 平均年龄 FROM students; </code><br>——— <strong>分组查询</strong> ———<br><code>GROUP BY</code> <em>常与聚合函数连用</em> <em>表示查询此列名下的数据</em><br><code>GROUP BY</code> <em>可接列名，也可接关于列名的判断</em><br>——— <em>例</em> ———</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT class, COUNT(*) AS 人数 </span><br><span class="line">FROM students </span><br><span class="line">GROUP BY class </span><br><span class="line">HAVING COUNT(*) &gt; 2;</span><br></pre></td></tr></table></figure>
+<p><em>只显示人数大于2的班级</em><br><code>HAVING</code><em>在分组后对聚合结果进行过滤，通常与聚合函数一起使用</em><br>——— <em>多表查询</em> ———<br><em>多表联查中的不同连接</em><br><em>内连接</em>  <code>INNER JOIN</code>  -  <em>只返回匹配的数据</em><br><em>左连接</em>  <code>LEFT JOIN</code>  -  <em>返回左表所有数据，右表没匹配的显示NULL</em><br><em>右连接</em>  <code>RIGHT JOIN</code>  -  <em>返回右表所有数据</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT ...</span><br><span class="line">FROM 表A   -- 这里是左表</span><br><span class="line">LEFT JOIN 表B   -- 这里是右表</span><br><span class="line">ON 条件;</span><br></pre></td></tr></table></figure>
+
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a><strong>改</strong></h2><p>——— <em>基本语法</em> ———<br><code>UPDATE 表名 SET 列1=值1, 列2=值2 WHERE 条件;</code><br><strong><code>UPDATE</code> 一定要加 <code>WHERE</code> 条件，否则会更新所有行！</strong><br>——— <em>例</em> ———<br><code>UPDATE students SET age = 20 WHERE name = &#39;张三&#39;;</code><br> —  <em>将张三的年龄改为20</em><br><code>UPDATE students SET age = age + 1;</code></p>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a><strong>删</strong></h2><p>——— <em>基本语法</em> ———<br><code>DELETE FROM 表名 WHERE 条件;</code><br><strong><code>DELETE</code> 一定要加 <code>WHERE</code> 条件，否则会删除所有数据！</strong><br>——— <em>例</em> ———<br><code>DELETE FROM students WHERE name = &#39;张三&#39;;</code><br> —  <em>删除名为张三的学生</em><br><code>DELETE FROM students;</code><br> —  <em>删除表中所有数据，但保留表结构</em> <em>新数据自增列会继续递增</em><br><code>TRUNCATE TABLE students;</code><br> —  <em>更快的删除所有数据方式（重置自增ID即ID重新从1开始）</em><br> <em>两者都不改变表的结构，键，约束，都又可以重新增加数据了</em></p>
+<p>——— <em>其他，总例</em> ———</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">-- 1. 创建表</span><br><span class="line">CREATE TABLE products (</span><br><span class="line">    id INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    name VARCHAR(100),</span><br><span class="line">    price DECIMAL(10,2),</span><br><span class="line">    stock INT,</span><br><span class="line">    category VARCHAR(50)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 2. 插入数据（增）</span><br><span class="line">INSERT INTO products (name, price, stock, category) VALUES</span><br><span class="line">(&#x27;iPhone 14&#x27;, 5999.00, 50, &#x27;手机&#x27;),</span><br><span class="line">(&#x27;华为 Mate 50&#x27;, 4999.00, 30, &#x27;手机&#x27;),</span><br><span class="line">(&#x27;小米电视&#x27;, 2999.00, 20, &#x27;电视&#x27;),</span><br><span class="line">(&#x27;MacBook Pro&#x27;, 12999.00, 15, &#x27;电脑&#x27;),</span><br><span class="line">(&#x27;iPad Air&#x27;, 4799.00, 25, &#x27;平板&#x27;);</span><br><span class="line"></span><br><span class="line">-- 3. 查询数据（查）</span><br><span class="line">-- 查询所有产品</span><br><span class="line">SELECT * FROM products;</span><br><span class="line"></span><br><span class="line">-- 查询价格大于5000的产品</span><br><span class="line">SELECT * FROM products WHERE price &gt; 5000;</span><br><span class="line"></span><br><span class="line">-- 查询手机类产品，按价格降序</span><br><span class="line">SELECT * FROM products </span><br><span class="line">WHERE category = &#x27;手机&#x27; </span><br><span class="line">ORDER BY price DESC;</span><br><span class="line"></span><br><span class="line">-- 统计每个类别的产品数量</span><br><span class="line">SELECT category, COUNT(*) AS 产品数量 </span><br><span class="line">FROM products </span><br><span class="line">GROUP BY category;</span><br><span class="line"></span><br><span class="line">-- 计算总库存价值</span><br><span class="line">SELECT SUM(price * stock) AS 总价值 FROM products;</span><br><span class="line"></span><br><span class="line">-- 4. 更新数据（改）</span><br><span class="line">-- iPhone降价500元</span><br><span class="line">UPDATE products </span><br><span class="line">SET price = price - 500 </span><br><span class="line">WHERE name = &#x27;iPhone 14&#x27;;</span><br><span class="line"></span><br><span class="line">-- 所有电脑类产品库存减10</span><br><span class="line">UPDATE products </span><br><span class="line">SET stock = stock - 10 </span><br><span class="line">WHERE category = &#x27;电脑&#x27;;</span><br><span class="line"></span><br><span class="line">-- 5. 删除数据（删）</span><br><span class="line">-- 删除库存为0的产品</span><br><span class="line">DELETE FROM products WHERE stock = 0;</span><br><span class="line"></span><br><span class="line">-- 删除价格低于3000的产品</span><br><span class="line">DELETE FROM products WHERE price &lt; 3000;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/10/MySQL%E5%9F%BA%E7%A1%80-0/" data-id="cmmkv3p9700003wug07jpg03f" data-title="MySQL基础2" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/03/07/%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">假如给我三天光明</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">-笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">-随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/10/MySQL%E5%9F%BA%E7%A1%80-0/">MySQL基础2</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/07/%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/">假如给我三天光明</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/06/MYsql%E5%9F%BA%E7%A1%80/">MySQL基础</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/06/%E7%AC%AC%E4%B8%80%E7%AF%87/">第一篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
